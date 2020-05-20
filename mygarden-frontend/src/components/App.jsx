@@ -12,6 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <p>hi</p>
+          <Main />
         </div>
       </BrowserRouter>
     );
@@ -27,7 +28,5 @@ const Main = () =>
   </Switch>
 }
 
-
-const 
 
 export default App;
