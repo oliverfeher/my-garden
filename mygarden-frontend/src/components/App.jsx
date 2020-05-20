@@ -18,6 +18,15 @@ class App extends Component {
   }
 }
 
+const Main = () =>
+{
+  <Switch>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/logout" component={Logout} />
+  </Switch>
+}
+
 
 const 
 
