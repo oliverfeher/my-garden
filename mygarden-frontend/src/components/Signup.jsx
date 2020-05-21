@@ -24,7 +24,7 @@ class Signup extends React.Component {
                         <br/>
                         <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
                         <br/>
-                        <label className="text-medium">Password</label>
+                        <label className="text-medium">Password:</label>
                         <br/>
                         <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
                         <br />

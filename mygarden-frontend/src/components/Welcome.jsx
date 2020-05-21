@@ -65,16 +65,14 @@ class Welcome extends React.Component
                 <img src={gardenLogo} id="garden-logo" alt=""/>
                 <h2 className="white text-big">myGarden</h2>
                     <form onSubmit={this.handleOnSubmit} id="log-in-form">
-                        <label className="text-medium">Email:</label>
-                        <br/>
-                        <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
-                        <br/>
-                        <label className="text-medium">Password</label>
-                        <br/>
+                        <label className="text-medium label-margin">Email:</label>
+                        <input type="email" value={this.state.email} onChange={this.handleOnChangeEmail}/>
+                        <label className="text-medium label-margin">Password:</label>
                         <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
-                        <br />
-                        <input type="submit" id="log-in" className="text-medium" value="Login"/>
-                        <Link to={"/signup"} id="sign-up" className="text-medium">Sign up</Link>
+                        <div id="form-buttons">
+                            <input type="submit" id="log-in" className="text-medium" value="Login"/>
+                            <Link to={"/signup"} id="sign-up" className="text-medium">Sign up</Link>
+                        </div>
                     </form>
                 <div id="footer">
                     <p className="text-medium">© 2020 - myGarden - All Rights Reserved</p>
