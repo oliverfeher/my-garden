@@ -2,6 +2,7 @@ import React from 'react';
 import "../stylesheets/App.css";
 import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
 import Home from './Home';
+import Welcome from "./Welcome"
 // import Login from './Login';
 // import Logout from './Logout';
 
@@ -10,9 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
           <Main />
-        </div>
       </BrowserRouter>
     );
   }
@@ -21,9 +20,9 @@ class App extends React.Component {
 const Main = () =>
 (
   <Switch>
-    <Route exact path="/" component={Home} />
-    {/* <Route exact path="/login" component={Login} />
-    <Route exact path="/logout" component={Logout} /> */}
+    <Route exact path="/" component={Welcome} />
+    <Route exact path="/login" component={Home} />
+    {/*<Route exact path="/logout" component={Logout} /> */}
   </Switch>
 )
 
