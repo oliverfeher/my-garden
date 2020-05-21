@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import gardenLogo from "../images/garden.png"
+import { Link } from 'react-router-dom';
 
 class Welcome extends React.Component
 {
@@ -72,7 +73,8 @@ class Welcome extends React.Component
                         <br/>
                         <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
                         <br />
-                        <input type="submit"/>
+                        <input type="submit" id="log-in"/>
+                        <Link to={"/signup"} id="sign-up">Sign up</Link>
                     </form>
                 <div id="footer">
                     <p>© 2020 - myGarden - All Rights Reserved</p>
