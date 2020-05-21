@@ -11,27 +11,43 @@ class Home extends React.Component
 
   componentDidMount = () =>
   {
-    axios.post("http://localhost:3001/api/authorize", {
-      token: localStorage.token
-    })
-    .then(response => this.setState({
-      user: response.data.user
-    }))
+    if(localStorage.token)
+    {
+      axios.post("http://localhost:3001/api/authorize", {
+        token: localStorage.token
+      })
+      .then(response => this.setState({
+        user: response.data.user
+      }))
+    }
+    else
+    {
+      this.props.history.push("/")
+    }
   }
   render()
   {
+    if(!localStorage.token)
+    {
+      this.props.history.push("/")
+    }
     if(!this.state.user)
     {
       return (
         <div>Loading...</div>
       )
     }
-    else {
+    else
+    {
       return (
-        <h1>Hello {this.state.user.first_name}</h1>
+        <div>
+          <h1>Hello {this.state.user.first_name}</h1>
+          <button onClick={()=>{localStorage.removeItem("token"); this.props.history.push("/")}}>logout</button>
+        </div>
       )
     }
     
+  
   }
 }
 
