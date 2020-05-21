@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # /api/ for routing the api path
   namespace :api do 
     resources :users
-    post 'user_token' => 'user_token#create'
-    post "find_user" => "users#find"
+
+    post "/login" to "sessions#authenticate" 
   end
 end
