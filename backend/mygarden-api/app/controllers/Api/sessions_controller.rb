@@ -7,6 +7,7 @@ class Api::SessionsController < ApplicationController
         
         if @user && @user.authenticate(user_params[:password])
             # ENCODE JWT TOKEN WITH USER_ID AND SECRET KEY
+            # TODO HIDE SECRET KEY INTO .ENV 
             token = JWT.encode({user_id: @user.id}, "t3sts3cr3t")
             render json: {
                 token: token
@@ -16,6 +17,15 @@ class Api::SessionsController < ApplicationController
                 error: "Invalid creditentials!"
             }
         end
+    end
+    
+    def authorize
+        # TODO HIDE SECRET KEY INTO .ENV 
+        token = JWT.decode(params[:token], "t3sts3cr3t")
+        @user = User.find_by(id: token.first["user_id"])
+        render json: {
+            user: @user
+        }
     end
 
 
