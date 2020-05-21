@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios";
 
 class Welcome extends React.Component
 {
@@ -26,10 +27,25 @@ class Welcome extends React.Component
         })
     }
 
+    handleOnSubmit = (event) =>
+    {
+        event.preventDefault();
+        let user = {
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        axios.post("http://localhost:3001/api/login",
+        {
+            user
+        })
+        .then(response => console.log(response.data.token))
+    }
+
     render()
     {
         return (
-            <form>
+            <form onSubmit={this.handleOnSubmit}>
                 <label>Email:</label>
                 <br/>
                 <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
