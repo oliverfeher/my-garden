@@ -63,8 +63,8 @@ class Welcome extends React.Component
         return (
             <div id="main">
                 <img src={gardenLogo} id="garden-logo" alt=""/>
-                <h2>myGarden</h2>
-                    <form onSubmit={this.handleOnSubmit}>
+                <h2 className="white text-big">myGarden</h2>
+                    <form onSubmit={this.handleOnSubmit} id="log-in-form">
                         <label>Email:</label>
                         <br/>
                         <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
