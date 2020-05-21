@@ -2,6 +2,8 @@ import React from 'react';
 import axios from "axios";
 import Weather from "./Weather"
 
+let coords;
+
 class Home extends React.Component
 {
   constructor()
@@ -10,11 +12,26 @@ class Home extends React.Component
     this.state = {};
   }
 
+  setCoords(position)
+  {
+    coords = {
+      location: {
+        lon: position.coords.latitude,
+        lat: position.coords.longitude
+      }
+    }
+  }
+
   componentDidMount = () =>
   {
+    navigator.geolocation.getCurrentPosition(position=> this.setState({
+      coords: {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
+      }
+    }))
+    // debugger;
     
-    navigator.geolocation.getCurrentPosition(position=>this.setState({location: position.coords}))
-
     if(localStorage.token)
     {
       axios.post("http://localhost:3001/api/authorize", {
@@ -30,14 +47,7 @@ class Home extends React.Component
     }
   }
 
-  getLocation = () =>
-  {
-    axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm&q=${this.state.location.latitude}%2C${this.state.location.longitude}`)
-    .then(response => { 
-      this.setState({location: response.data["EnglishName"]});
-    })
-  }
-
+  
   render()
   {
     if(!localStorage.token)
@@ -55,7 +65,7 @@ class Home extends React.Component
       return (
         <div>
           <h1>Hello {this.state.user.first_name}</h1>
-          {!this.state.location ? <p>Your location is: Loading...</p> : <Weather location={this.state.location}/>}
+          {!this.state.coords ? <p>Your location is: Loading...</p> : <Weather location={this.state.coords}/>}
           <button onClick={()=>{localStorage.removeItem("token"); this.props.history.push("/")}}>logout</button>
         </div>
       )
@@ -66,3 +76,4 @@ class Home extends React.Component
 }
 
 export default Home;
+
