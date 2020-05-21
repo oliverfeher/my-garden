@@ -25,6 +25,7 @@ class Home extends React.Component
       this.props.history.push("/")
     }
   }
+  
   render()
   {
     if(!localStorage.token)

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import gardenLogo from "../images/garden.png"
 
 class Welcome extends React.Component
 {
@@ -40,25 +41,42 @@ class Welcome extends React.Component
             user
         })
         .then(response => {
-            localStorage.setItem("token", response.data.token);
-            this.props.history.push("/welcome")
+            // VALIDATE IF RESPONSE WAS OK
+            if(!response.data.error)
+            {
+                localStorage.setItem("token", response.data.token);
+                this.props.history.push("/welcome")
+            }
+            else
+            {
+                let errorMsg = document.createElement("p");
+                errorMsg.innerText = response.data.error;
+                document.querySelector("form").appendChild(errorMsg)
+                this.props.history.push("/")
+            }
         })
     }
 
     render()
     {
         return (
-            <form onSubmit={this.handleOnSubmit}>
-                <label>Email:</label>
-                <br/>
-                <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
-                <br/>
-                <label>Password</label>
-                <br/>
-                <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
-                <br />
-                <input type="submit"/>
-            </form>
+            <div id="main">
+                <img src={gardenLogo} id="garden-logo"/>
+                    <form onSubmit={this.handleOnSubmit}>
+                        <label>Email:</label>
+                        <br/>
+                        <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
+                        <br/>
+                        <label>Password</label>
+                        <br/>
+                        <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
+                        <br />
+                        <input type="submit"/>
+                    </form>
+                <div id="footer">
+                    <p>© 2020 - myGarden - All Rights Reserved</p>
+                </div>
+            </div>
         )
     }
 }
