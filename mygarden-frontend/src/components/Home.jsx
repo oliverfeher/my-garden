@@ -11,6 +11,9 @@ class Home extends React.Component
 
   componentDidMount = () =>
   {
+    
+    navigator.geolocation.getCurrentPosition(position=>this.setState({location: position.coords}))
+
     if(localStorage.token)
     {
       axios.post("http://localhost:3001/api/authorize", {
@@ -25,7 +28,7 @@ class Home extends React.Component
       this.props.history.push("/")
     }
   }
-  
+
   render()
   {
     if(!localStorage.token)
@@ -43,6 +46,7 @@ class Home extends React.Component
       return (
         <div>
           <h1>Hello {this.state.user.first_name}</h1>
+          <p>Your location is: {this.state.location.latitude}, {this.state.location.longitude}</p>
           <button onClick={()=>{localStorage.removeItem("token"); this.props.history.push("/")}}>logout</button>
         </div>
       )

@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
     
     def authorize
         # TODO HIDE SECRET KEY INTO .ENV \
-        binding.pry
+        # binding.pry
         token = JWT.decode(params[:token], "t3sts3cr3t")
         @user = User.find_by(id: token.first["user_id"])
         render json: {
