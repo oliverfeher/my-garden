@@ -26,14 +26,22 @@ class Weather extends React.Component
     getWeather = () =>
     {
         axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${this.state.location.key}?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm`)
-        .then(response => console.log(response))
+        .then(response => this.setState({
+            weather: {
+                temp: response.data[0]["Temperature"]["Imperial"],
+                status: response.data[0]["WeatherText"]
+            }
+        }))
     }
+
+    
 
 
     componentDidUpdate = () =>
     {
         this.getWeather();
     }
+
     componentDidMount = () =>
     {
         this.getLocation();
@@ -41,7 +49,17 @@ class Weather extends React.Component
 
     render()
     {
-        if(this.state.location)
+        if(this.state.weather)
+        {
+            return (
+                <div>
+                    <p>You live in: {this.state.location.city}</p>
+                    <p>It is {this.state.weather.status} currently!</p>
+                    <p>Current temperature is: {this.state.weather.temp.Value} F</p>
+                </div>
+            )
+        }
+        else if(this.state.location)
         {
             return (
                 <div>
