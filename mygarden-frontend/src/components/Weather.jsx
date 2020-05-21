@@ -23,6 +23,17 @@ class Weather extends React.Component
         })
     }
 
+    getWeather = () =>
+    {
+        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${this.state.location.key}?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm`)
+        .then(response => console.log(response))
+    }
+
+
+    componentDidUpdate = () =>
+    {
+        this.getWeather();
+    }
     componentDidMount = () =>
     {
         this.getLocation();
