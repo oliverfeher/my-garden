@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Weather from "./Weather"
 
 class Home extends React.Component
 {
@@ -29,6 +30,14 @@ class Home extends React.Component
     }
   }
 
+  getLocation = () =>
+  {
+    axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm&q=${this.state.location.latitude}%2C${this.state.location.longitude}`)
+    .then(response => { 
+      this.setState({location: response.data["EnglishName"]});
+    })
+  }
+
   render()
   {
     if(!localStorage.token)
@@ -46,7 +55,7 @@ class Home extends React.Component
       return (
         <div>
           <h1>Hello {this.state.user.first_name}</h1>
-          {!this.state.location ? <p>Your location is: Loading...</p> : <p>Your location is: {this.state.location.latitude}, {this.state.location.longitude}</p>}
+          {!this.state.location ? <p>Your location is: Loading...</p> : <Weather location={this.state.location}/>}
           <button onClick={()=>{localStorage.removeItem("token"); this.props.history.push("/")}}>logout</button>
         </div>
       )
