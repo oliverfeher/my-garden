@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 class Welcome extends React.Component
 {
@@ -39,7 +40,10 @@ class Welcome extends React.Component
         {
             user
         })
-        .then(response => console.log(response.data.token))
+        .then(response => {
+            localStorage.setItem("token", response.data.token);
+            this.props.history.push("/welcome")
+        })
     }
 
     render()

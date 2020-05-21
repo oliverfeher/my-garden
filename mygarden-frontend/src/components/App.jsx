@@ -21,7 +21,7 @@ const Main = () =>
 (
   <Switch>
     <Route exact path="/" component={Welcome} />
-    <Route exact path="/login" component={Home} />
+    <Route exact path="/welcome" component={Home} />
     {/*<Route exact path="/logout" component={Logout} /> */}
   </Switch>
 )
