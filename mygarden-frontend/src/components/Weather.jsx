@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 
 class Weather extends React.Component
@@ -11,21 +12,36 @@ class Weather extends React.Component
 
     getLocation = () =>
     {
-        console.log(this.state)
-        // axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm&q=${coords.location.latitude}%2C${coords.location.longitude}`)
-        // .then(response => { 
-        //   this.setState({location: response.data["EnglishName"]});
-        // })
+        axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm&q=${this.props.location.lat}%2C${this.props.location.lon}`)
+        .then(response => { 
+          this.setState({
+              location: {
+                city: response.data["EnglishName"],
+                key: response.data["Key"]
+                }
+            });
+        })
+    }
+
+    componentDidMount = () =>
+    {
+        this.getLocation();
     }
 
     render()
     {
-        return (
-            <div>
-                <p>{this.props.location.lat}</p>
-                <p>{this.props.location.lon}</p>
-            </div>
-        )
+        if(this.state.location)
+        {
+            return (
+                <div>
+                    <p>You live in: {this.state.location.city}</p>
+                </div>
+            )
+        }
+        else
+        {
+            return <p>loading..</p>
+        }
     }
 }
 
