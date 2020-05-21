@@ -61,7 +61,8 @@ class Welcome extends React.Component
     {
         return (
             <div id="main">
-                <img src={gardenLogo} id="garden-logo"/>
+                <img src={gardenLogo} id="garden-logo" alt=""/>
+                <h2>myGarden</h2>
                     <form onSubmit={this.handleOnSubmit}>
                         <label>Email:</label>
                         <br/>
