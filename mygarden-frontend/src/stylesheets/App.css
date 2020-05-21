@@ -1,3 +1,4 @@
+/* BASIC RESET + BACKGROUND */
 html {
     background-image: url("../images/background.png");
     background-size: cover;
@@ -7,6 +8,12 @@ html {
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
+/* BASIC RESET + BACKGROUND */
+
 
 #root {
     display: flex;
@@ -22,7 +29,7 @@ html {
 }
 
 #garden-logo {
-    margin: 10% 0 0 0;
+    margin: 10% 0 1% 0;
     width: 70%;
 }
 
@@ -44,7 +51,8 @@ html {
     text-align: center;
     background-color: white;
     border-radius: 25px;
-    height: 200px;
+    height: 275px;
+    margin: 2% 0 0 0;
 }
 
 .white {
@@ -52,5 +60,28 @@ html {
 }
 
 .text-big {
-    font-size: 2em;
+    font-size: 2.8em;
+}
+
+.text-medium {
+    font-size: 1.4em;
+}
+
+#log-in {
+    margin-top: 5%;
+    border-radius: 25px;
+    width: 20%;
+    font-family: 'Berkshire Swash', cursive;
+    background-color: #BEFF9C;
+    border: black solid 1px;
+    margin-right: 5%;
+}
+
+#sign-up {
+    padding: 0 13px 0 13px;
+    margin-top: 5%;
+    border-radius: 25px;
+    font-family: 'Berkshire Swash', cursive;
+    background-color: #E2645A;
+    border: black solid 1px;
 }
