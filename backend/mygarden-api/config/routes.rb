@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # /api/ for routing the api path
   namespace :api do 
     resources :users
-
-    post "/login" to "sessions#authenticate" 
+    post "/login", to: "sessions#authenticate" 
   end
+
 end
