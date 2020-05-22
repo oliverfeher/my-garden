@@ -62,7 +62,7 @@ class Dashboard extends React.Component
               <div id="currently-growing">
                 <div id="plants-ready"></div>
               </div>
-              {<Weather location={this.state.coords}/>}
+              <Weather location={this.state.coords}/>
             </div>
           </div>
         </div>

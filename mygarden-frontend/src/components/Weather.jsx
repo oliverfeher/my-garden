@@ -18,15 +18,15 @@ class Weather extends React.Component
           this.setState({
               location: {
                 city: response.data["EnglishName"],
-                key: response.data["Key"]
                 }
             });
+            this.getWeather(response);
         })
     }
 
-    getWeather = () =>
+    getWeather = (response) =>
     {
-        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${this.state.location.key}?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm`)
+        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${response.data["Key"]}?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm`)
         .then(response => this.setState({
             weather: {
                 temp: response.data[0]["Temperature"]["Imperial"],
@@ -40,13 +40,10 @@ class Weather extends React.Component
 
     componentDidUpdate = () =>
     {
-        this.getWeather();
-    }
-
-    componentDidMount = () =>
-    {
         this.getLocation();
     }
+
+
 
     render()
     {
@@ -76,7 +73,12 @@ class Weather extends React.Component
         }
         else
         {
-            return <p>loading..</p>
+            return (
+                <div id="weather">
+                    <p>WEATHER</p>
+                    <h1>LOADING...</h1>
+                </div>
+            )
         }
     }
 }
