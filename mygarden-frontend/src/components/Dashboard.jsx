@@ -53,7 +53,7 @@ class Dashboard extends React.Component
     else
     {
       return (
-        <div>
+        <div id="dashboard">
           <NavBar />
           <h1>Hello {this.state.user.first_name}</h1>
           {!this.state.coords ? <p>Your location is: Loading...</p> : <Weather location={this.state.coords}/>}
