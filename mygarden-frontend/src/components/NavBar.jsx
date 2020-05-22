@@ -11,7 +11,7 @@ class NavBar extends React.Component
                 <Link to={"/plant"} id="plant" className="">plant</Link>
                 <Link to={"/history"} id="plant" className="">history</Link>
                 <Link to={"/current"} id="plant" className="">current</Link>
-                <Link to={"/logout"} id="plant" className="">logout</Link>
+                <Link to={"/"} onClick={()=>{localStorage.removeItem("token")}} id="plant" className="">logout</Link>
             </nav>
         )
     }
