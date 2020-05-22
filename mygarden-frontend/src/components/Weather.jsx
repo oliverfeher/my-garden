@@ -52,7 +52,7 @@ class Weather extends React.Component
         if(this.state.weather)
         {
             return (
-                <div>
+                <div id="weather">
                     <p>You live in: {this.state.location.city}</p>
                     <p>It is {this.state.weather.status} currently!</p>
                     <p>Current temperature is: {this.state.weather.temp.Value} F</p>

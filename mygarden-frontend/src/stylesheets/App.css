@@ -111,3 +111,7 @@ a {
 #log-in-form label:first-child {
     margin-top: 7%;
 }
+
+#weather {
+    color: white;
+}
