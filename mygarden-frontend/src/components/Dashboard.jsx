@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from "axios";
-import Weather from "./Weather"
-import NavBar from "./NavBar"
+import Weather from "./Weather";
+import NavBar from "./NavBar";
+import Greeting from './Greeting';
 
 
 class Dashboard extends React.Component
@@ -55,8 +56,10 @@ class Dashboard extends React.Component
       return (
         <div id="dashboard">
           <NavBar />
-          <h1>Welcome back, {this.state.user.first_name}!</h1>
-          {!this.state.coords ? <p>Your location is: Loading...</p> : <Weather location={this.state.coords}/>}
+          <div id="dashboard-main">
+            <Greeting userName={this.state.user.first_name} />
+            {!this.state.coords ? <p>Your location is: Loading...</p> : <Weather location={this.state.coords}/>}
+          </div>
         </div>
       )
     }
