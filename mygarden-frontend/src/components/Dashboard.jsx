@@ -2,9 +2,8 @@ import React from 'react';
 import axios from "axios";
 import Weather from "./Weather"
 
-let coords;
 
-class Home extends React.Component
+class Dashboard extends React.Component
 {
   constructor()
   {
@@ -12,16 +11,7 @@ class Home extends React.Component
     this.state = {};
   }
 
-  setCoords(position)
-  {
-    coords = {
-      location: {
-        lon: position.coords.latitude,
-        lat: position.coords.longitude
-      }
-    }
-  }
-
+ 
   componentDidMount = () =>
   {
     navigator.geolocation.getCurrentPosition(position=> this.setState({
@@ -30,7 +20,6 @@ class Home extends React.Component
         lon: position.coords.longitude
       }
     }))
-    // debugger;
     
     if(localStorage.token)
     {
@@ -75,5 +64,5 @@ class Home extends React.Component
   }
 }
 
-export default Home;
+export default Dashboard;
 

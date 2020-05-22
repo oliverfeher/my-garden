@@ -46,7 +46,7 @@ class Welcome extends React.Component
             if(!response.data.error)
             {
                 localStorage.setItem("token", response.data.token);
-                this.props.history.push("/welcome")
+                this.props.history.push("/Dashboard")
             }
             else
             {
