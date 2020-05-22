@@ -178,3 +178,58 @@ nav a:hover {
 #date {
     margin-right: 1%;
 }
+
+#dashboard-divs {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+#weather {
+    background-color: white;
+    color: black;
+    width: 50%;
+    border-radius: 25px;
+    height: 350px;
+    text-align: center;
+    font-size: 1.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#currently-growing {
+    border-radius: 25px;
+    background-color: white;
+    width: 50%;
+    margin-right: 5%;
+}
+
+#forecast {
+    color: white;
+    margin-top: 2%;
+    height: 80%;
+    text-align: center;
+    font-size: 0.7em;
+    background-color: orange;
+    border-radius: 25px;
+    width: 90%;
+
+}
+
+.weather-logo {
+    margin-top: 5%;
+    width: 40%;
+}
+
+#weather-stats {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+#w-temp {
+    margin-right: auto;
+    margin-left: 5%;
+}

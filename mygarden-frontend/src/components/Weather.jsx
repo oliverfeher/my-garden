@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Sunny from "../images/sunny.png"
 
 
 class Weather extends React.Component
@@ -53,9 +54,15 @@ class Weather extends React.Component
         {
             return (
                 <div id="weather">
-                    <p>You live in: {this.state.location.city}</p>
-                    <p>It is {this.state.weather.status} currently!</p>
-                    <p>Current temperature is: {this.state.weather.temp.Value} F</p>
+                    <p>WEATHER</p>
+                    <div id="forecast">
+                        <p>{this.state.location.city}</p>
+                        <img src={Sunny} className="weather-logo"/>
+                        <div id="weather-stats">
+                            <p>{this.state.weather.status}</p>
+                            <p id="w-temp">{this.state.weather.temp.Value} F</p>
+                        </div>
+                    </div>
                 </div>
             )
         }

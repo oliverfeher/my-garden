@@ -58,7 +58,12 @@ class Dashboard extends React.Component
           <NavBar />
           <div id="dashboard-main">
             <Greeting userName={this.state.user.first_name} />
-            {!this.state.coords ? <p>Your location is: Loading...</p> : <Weather location={this.state.coords}/>}
+            <div id="dashboard-divs">
+              <div id="currently-growing">
+                <div id="plants-ready"></div>
+              </div>
+              {<Weather location={this.state.coords}/>}
+            </div>
           </div>
         </div>
       )
