@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # /api/ for routing the api path
   namespace :api do 
-    resources :users
+    resources :users do
+      post "/plant", to: "plants#create"
+    end
     post "/login", to: "sessions#authenticate"
     post "/authorize", to: "sessions#authorize"
   end
