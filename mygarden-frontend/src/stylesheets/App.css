@@ -246,3 +246,8 @@ nav a:hover {
 #weather-title {
     margin-top: 2%;
 }
+
+#planting-form {
+    display: flex;
+    flex-direction: column;
+}
