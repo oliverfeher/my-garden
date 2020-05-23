@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    # KNOCK plus password encrypton
     has_secure_password
+    has_many :plants
 
     # Validations
     validates :first_name, presence: true
