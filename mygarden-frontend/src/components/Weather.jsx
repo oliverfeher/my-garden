@@ -62,7 +62,7 @@ class Weather extends React.Component
         {
             return (
                 <div id="weather">
-                    <p>WEATHER</p>
+                    <p id="weather-title">WEATHER</p>
                     {WeatherLogo(this.state)}
                 </div>
             )

@@ -148,6 +148,7 @@ nav a:hover {
     width: 10%;
     justify-self: start;
     margin-right: auto;
+    margin-left: 1%;
 }
 
 #greeting {
@@ -239,4 +240,8 @@ nav a:hover {
 #w-status {
     margin-right: 5%;
     font-size: 1.5em;
+}
+
+#weather-title {
+    margin-top: 2%;
 }
