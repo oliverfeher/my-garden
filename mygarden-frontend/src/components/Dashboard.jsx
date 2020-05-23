@@ -15,14 +15,14 @@ class Dashboard extends React.Component
 
  
   componentDidMount = () =>
-  {
+  {  
     navigator.geolocation.getCurrentPosition(position=> this.setState({
       coords: {
         lat: position.coords.latitude,
         lon: position.coords.longitude
       }
     }))
-    
+
     if(localStorage.token)
     {
       axios.post("http://localhost:3001/api/authorize", {

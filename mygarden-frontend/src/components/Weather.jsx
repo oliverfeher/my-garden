@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import Sunny from "../images/sunny.png"
+import WeatherLogo from "../helpers/WeatherLogo";
+import Loading from "../images/loading.gif";
 
 
 class Weather extends React.Component
@@ -21,8 +22,9 @@ class Weather extends React.Component
                 }
             });
             this.getWeather(response);
-        })
+        }).then(data => data)
     }
+
 
     getWeather = (response) =>
     {
@@ -36,30 +38,32 @@ class Weather extends React.Component
     }
 
     
-
+    componentDidMount = () =>
+    {
+        if(this.props.location)
+        {
+            this.getLocation();
+        }
+    }
 
     componentDidUpdate = () =>
     {
-        this.getLocation();
+        if(!this.state.weather)
+        {    
+            this.getLocation();
+        }
     }
-
-
+    
 
     render()
     {
+
         if(this.state.weather)
         {
             return (
                 <div id="weather">
                     <p>WEATHER</p>
-                    <div id="forecast">
-                        <p>{this.state.location.city}</p>
-                        <img src={Sunny} className="weather-logo"/>
-                        <div id="weather-stats">
-                            <p>{this.state.weather.status}</p>
-                            <p id="w-temp">{this.state.weather.temp.Value} F</p>
-                        </div>
-                    </div>
+                    {WeatherLogo(this.state)}
                 </div>
             )
         }
@@ -76,7 +80,8 @@ class Weather extends React.Component
             return (
                 <div id="weather">
                     <p>WEATHER</p>
-                    <h1>LOADING...</h1>
+                    <br/>
+                    <img src={Loading}/>
                 </div>
             )
         }
