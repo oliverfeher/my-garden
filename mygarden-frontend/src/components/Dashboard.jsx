@@ -3,6 +3,7 @@ import axios from "axios";
 import Weather from "./Weather";
 import NavBar from "./NavBar";
 import Greeting from './Greeting';
+import jwt from "jsonwebtoken";
 
 
 class Dashboard extends React.Component

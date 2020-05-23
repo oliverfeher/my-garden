@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import CurrentDate from "../helpers/CurrentDate"
+import jwt from "jsonwebtoken";
 
 class Plant extends React.Component
 {
@@ -34,6 +34,15 @@ class Plant extends React.Component
         this.setState({
             days: event.target.value
         })
+    }
+
+    handleOnSubmit = (event) =>
+    {
+        event.preventDefault();
+        event.persist();
+        axios.post(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}/plant`)
+        .then(data => console.log(data))
+        
     }
 
     render()
