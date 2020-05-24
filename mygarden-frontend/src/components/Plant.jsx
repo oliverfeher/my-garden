@@ -3,7 +3,6 @@ import axios from "axios";
 import jwt from "jsonwebtoken";
 import NavBar from "./NavBar";
 
-
 class Plant extends React.Component
 {
     constructor(props)

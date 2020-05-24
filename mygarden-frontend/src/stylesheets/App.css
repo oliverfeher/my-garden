@@ -257,12 +257,13 @@ nav a:hover {
 }
 
 #plants-container {
+    margin-top: 5%;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
 
 .plant-container {
@@ -274,5 +275,65 @@ nav a:hover {
 }
 
 .plant-container h3 {
-    text-transform: capitalize;
+    margin-top: 5%;
+    font-size: 2em;
+}
+
+.planted-on {
+    margin-top: 4%;
+    background-color: #E2AD59;
+    font-size: 1.4em;
+    width: 70%;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.planted-date {
+    background-color: #959595;
+    font-size: 1.4em;
+    width: 70%;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+}
+
+.days-to-harvest {
+    margin-top: 4%;
+    background-color: #83BC66;
+    font-size: 1.4em;
+    width: 70%;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.days-to {
+    background-color: #959595;
+    font-size: 1.4em;
+    width: 70%;
+    text-align: center;
+    border-radius: 0 0 15px 15px ;
+}
+
+.harvest-button {
+    background-color: #BEFF9C;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+
+.cancel-button {
+    background-color: #E2645A;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.harvest-buttons {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.veggie-logo {
+    width: 30%;
+    margin-top: 5%;
 }
