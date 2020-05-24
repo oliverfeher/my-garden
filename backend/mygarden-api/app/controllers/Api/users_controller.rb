@@ -9,11 +9,9 @@ class Api::UsersController < ApplicationController
         render json: User.all
     end
 
-
-    private
-
-    def set_user
+    def show
         @user = User.find_by(id: params[:id])
+        render json: @user.to_json(:include => [:plants])
     end
 
 end

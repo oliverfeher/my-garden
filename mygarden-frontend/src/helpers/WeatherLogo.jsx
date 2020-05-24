@@ -25,7 +25,7 @@ const WeatherLogo = (state) =>
             return (
                 <div id="forecast" style={{backgroundColor: "#FFA200"}}>
                         <p>{state.location.city}</p>
-                        <img src={Sunny} className="weather-logo"/>>
+                        <img src={Sunny} className="weather-logo"/>
                         <div id="weather-stats">
                             <p id="w-status">{state.weather.status}</p>
                             <p id="w-temp">{state.weather.temp.Value} F</p>
