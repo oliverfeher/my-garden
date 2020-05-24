@@ -8,12 +8,39 @@ class Current extends React.Component
     constructor(props)
     {
         super(props);
+        this.state = {
+            plants: []
+        };
     }
 
     componentDidMount = () =>
     {
         axios.get(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}`)
-        .then(response => console.log(response))
+        .then(response =>this.setState(
+            {
+                plants: response.data.plants
+            }
+        ))
+    }
+
+    renderPlants = (obj) =>
+    {
+        console.log("test")
+        return obj.plants.map(plant => {
+            return (
+                <div className="plant-container">
+                    <p>{plant.name}</p>
+                    <p>planted on</p>
+                    <p>{plant.plant_date}</p>
+                    <p>days to harvest</p>
+                    <p>{plant.days_to_harvest}</p>
+                    <div>
+                        <button>harvest</button>
+                        <button>cancel</button>
+                    </div>
+                </div>
+            )
+        })
     }
 
     render()
@@ -23,7 +50,9 @@ class Current extends React.Component
             return (
                 <>
                     <NavBar/>
-                    <div></div>
+                    <div id="plants-container">
+                        {this.state.plants ? this.renderPlants(this.state) : <h1>Loading..</h1>}
+                    </div>
                 </>
             )
         }
