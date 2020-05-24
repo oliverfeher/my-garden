@@ -5,6 +5,7 @@ import Dashboard from './Dashboard';
 import Welcome from "./Welcome"
 import Signup from "./Signup";
 import Plant from "./Plant";
+import Current from "./Current";
 
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ const Main = () =>
     <Route exact path="/dashboard" component={Dashboard} />
     <Route exact path="/signup" component={Signup, Dashboard} />
     <Route exact path="/plant" component={Plant} />
+    <Route exact path="/current" component={Current} />
   </Switch>
 )
 
