@@ -27,8 +27,7 @@ class Current extends React.Component
     // RENDER EXISTING PLANTS THAT ARE CURRENTLY GROWING
     renderPlants = (obj) =>
     {
-        console.log("test")
-        return obj.plants.map(plant => <GrowingPlant plant={plant}/> )
+        return obj.plants.map(plant => <GrowingPlant plant={plant} key={plant.id}/> )
     }
 
     render()
