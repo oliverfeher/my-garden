@@ -257,7 +257,7 @@ nav a:hover {
 }
 
 #plants-container {
-    width: 100%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -271,4 +271,8 @@ nav a:hover {
     align-items: center;
     background-color: #F5F7F4;
     border-radius: 25px;
+}
+
+.plant-container h3 {
+    text-transform: capitalize;
 }
