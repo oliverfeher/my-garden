@@ -40,8 +40,18 @@ class Plant extends React.Component
     {
         event.preventDefault();
         event.persist();
-        axios.post(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}/plant`)
+        axios.post(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}/plant`,
+        {
+            user: jwt.decode(localStorage.token).user_id,
+            plant: this.state
+        })
         .then(data => console.log(data))
+
+        // const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        // const firstDate = new Date(response.data.plants[0].plant_date.replace("-", ","));
+        // const secondDate = new Date(firstDate.getDate()+response.data.plants[0].days_to_harvest);
+
+        // const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
         
     }
 
