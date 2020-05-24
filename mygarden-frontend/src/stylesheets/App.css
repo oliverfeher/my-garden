@@ -261,7 +261,7 @@ nav a:hover {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 }
@@ -336,4 +336,8 @@ nav a:hover {
 .veggie-logo {
     width: 30%;
     margin-top: 5%;
+}
+
+.cancel-button:hover, .harvest-button:hover {
+    cursor: pointer;
 }
