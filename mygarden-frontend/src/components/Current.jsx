@@ -10,6 +10,7 @@ class Current extends React.Component
 
     render()
     {
+        debugger;
         return (
             <>
                 <NavBar/>
@@ -18,3 +19,5 @@ class Current extends React.Component
         )
     }
 }
+
+export default Current;

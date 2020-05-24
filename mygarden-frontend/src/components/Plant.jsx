@@ -47,7 +47,12 @@ class Plant extends React.Component
             user: jwt.decode(localStorage.token).user_id,
             plant: this.state
         })
-        .then(data => console.log(data))
+        .then(response => {
+            this.props.history.push({
+                pathname: "/current",
+                state: { user: response.data}
+                })
+            })
 
         // const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         // const firstDate = new Date(response.data.plants[0].plant_date.replace("-", ","));
