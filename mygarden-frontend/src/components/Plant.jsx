@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 import NavBar from "./NavBar";
-import { Redirect } from "react-router-dom";
+
 
 class Plant extends React.Component
 {
