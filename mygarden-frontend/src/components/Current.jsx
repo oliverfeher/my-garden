@@ -29,14 +29,14 @@ class Current extends React.Component
         return obj.plants.map(plant => {
             return (
                 <div className="plant-container">
-                    <p>{plant.name}</p>
-                    <p>planted on</p>
-                    <p>{plant.plant_date}</p>
-                    <p>days to harvest</p>
-                    <p>{plant.days_to_harvest}</p>
-                    <div>
-                        <button>harvest</button>
-                        <button>cancel</button>
+                    <h3>{plant.name}</h3>
+                    <p className="planted-on">planted on</p>
+                    <p className="planted-date">{plant.plant_date}</p>
+                    <p className="days-to-harvest">days to harvest</p>
+                    <p className="days-to">{plant.days_to_harvest}</p>
+                    <div classname="harvest-buttons">
+                        <button className="harvest-button">harvest</button>
+                        <button className="cancel-button">cancel</button>
                     </div>
                 </div>
             )

@@ -253,5 +253,22 @@ nav a:hover {
 }
 
 #planting-form-container {
-    
+
+}
+
+#plants-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.plant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F7F4;
+    border-radius: 25px;
 }
