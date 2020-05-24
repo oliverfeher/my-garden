@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 import NavBar from "./NavBar";
+import Garden from "../images/garden.png"
 
 class Plant extends React.Component
 {
@@ -68,14 +69,15 @@ class Plant extends React.Component
             <>
                 <NavBar/>
                 <div id="planting-form-container">
+                    <img src={Garden} id="form-garden"></img>
                     <form id="planting-form" onSubmit={this.handleOnSubmit}>
-                        <label>plant's name</label>
-                        <input type="text" value={this.state.name} onChange={this.handleOnChangeName}/>
-                        <label>planting date</label>
-                        <input type="date" value={this.state.date} onChange={this.handleOnChangeDate}/>
-                        <label>expected to harvest</label>
-                        <input type="number" value={this.state.days} onChange={this.handleOnChangeDays}/>
-                        <input type="submit"/>  
+                        <label style={{alignSelf: "center", width: "120%"}}className="plants-name">plant's name</label>
+                        <input style={{alignSelf: "center", width: "119.5%"}} className="plants-name-input" type="text" value={this.state.name} onChange={this.handleOnChangeName}/>
+                        <label style={{alignSelf: "center", width: "120%"}} className="planted-on">planting date</label>
+                        <input style={{alignSelf: "center", width: "119.5%"}} className="planted-date" type="date" value={this.state.date} onChange={this.handleOnChangeDate}/>
+                        <label style={{alignSelf: "center", width: "120%"}} className="days-to-harvest">expected to harvest</label>
+                        <input style={{alignSelf: "center", width: "119.5%"}} className="days-to"type="number" value={this.state.days} onChange={this.handleOnChangeDays}/>
+                        <input className="harvest-button" type="submit" value="Plant!" id="plant-button"/>  
                     </form>
                 </div>
             </>

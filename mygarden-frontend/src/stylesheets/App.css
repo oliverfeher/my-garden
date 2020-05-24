@@ -253,7 +253,13 @@ nav a:hover {
 }
 
 #planting-form-container {
-
+    margin-top: 5%;
+    background-color: #F5F7F4;
+    width: 30%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #plants-container {
@@ -340,4 +346,33 @@ nav a:hover {
 
 .cancel-button:hover, .harvest-button:hover {
     cursor: pointer;
+}
+
+#form-garden {
+    width: 50%;
+    position: relative;
+    top: -80px;
+    margin-bottom: -50px;
+}
+
+.plants-name {
+    margin-top: 4%;
+    background-color: black;
+    color: white;
+    font-size: 1.4em;
+    width: 70%;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.plants-name-input {
+    background-color: #959595;
+    font-size: 1.4em;
+    width: 70%;
+    text-align: center;
+    border-radius: 0 0 15px 15px ;
+}
+#plant-button {
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
