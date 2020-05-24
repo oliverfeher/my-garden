@@ -10,13 +10,25 @@ class Current extends React.Component
 
     render()
     {
-        debugger;
-        return (
-            <>
-                <NavBar/>
-                <div></div>
-            </>
-        )
+        if(this.props.location.state)
+        
+        {
+            return (
+                <>
+                    <NavBar/>
+                    <div></div>
+                </>
+            )
+        }
+        else
+        {
+            return (
+                <>
+                    <NavBar/>
+                    <div></div>
+                </>
+            )
+        }
     }
 }
 
