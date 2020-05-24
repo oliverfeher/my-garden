@@ -24,6 +24,7 @@ class Current extends React.Component
         ))
     }
 
+    // RENDER EXISTING PLANTS THAT ARE CURRENTLY GROWING
     renderPlants = (obj) =>
     {
         console.log("test")

@@ -53,12 +53,6 @@ class Plant extends React.Component
                 state: { user: response.data}
                 })
             })
-
-        // const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-        // const firstDate = new Date(response.data.plants[0].plant_date.replace("-", ","));
-        // const secondDate = new Date(firstDate.getDate()+response.data.plants[0].days_to_harvest);
-
-        // const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
         
     }
 
