@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
+import NavBar from "./NavBar";
+import { Redirect } from "react-router-dom";
 
 class Plant extends React.Component
 {
@@ -65,6 +67,8 @@ class Plant extends React.Component
         else
         {
             return (
+            <>
+                <NavBar/>
                 <div id="planting-form-container">
                     <form id="planting-form" onSubmit={this.handleOnSubmit}>
                         <label>plant's name</label>
@@ -76,6 +80,7 @@ class Plant extends React.Component
                         <input type="submit"/>  
                     </form>
                 </div>
+            </>
             )
         }
     }
