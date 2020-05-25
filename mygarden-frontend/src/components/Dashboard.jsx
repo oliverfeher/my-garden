@@ -30,7 +30,7 @@ class Dashboard extends React.Component
         token: localStorage.token
       })
       .then(response => this.setState({
-        user: response.data.user
+        user: response.data
       }))
     }
     else
@@ -61,7 +61,11 @@ class Dashboard extends React.Component
             <Greeting userName={this.state.user.first_name} />
             <div id="dashboard-divs">
               <div id="currently-growing">
-                <div id="plants-ready"></div>
+                <h3>myGarden</h3>
+                <div></div>
+                <p>You currently have {this.state.user.plants.length > 0 ? this.state.user.plants.length : 0 } plants growing.</p>
+              </div>
+              <div id="plants-ready">
               </div>
               <Weather location={this.state.coords}/>
             </div>

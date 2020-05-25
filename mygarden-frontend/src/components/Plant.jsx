@@ -72,7 +72,7 @@ class Plant extends React.Component
                     <img src={Garden} id="form-garden"></img>
                     <form id="planting-form" onSubmit={this.handleOnSubmit}>
                         <label style={{alignSelf: "center", width: "120%"}}className="plants-name">plant's name</label>
-                        <input style={{alignSelf: "center", width: "119.5%"}} className="plants-name-input white" type="text" value={this.state.name} onChange={this.handleOnChangeName}/>
+                        <input style={{alignSelf: "center", width: "119.5%"}}id="plants-name-input" className="white" type="text" value={this.state.name} onChange={this.handleOnChangeName}/>
                         <label style={{alignSelf: "center", width: "120%"}} className="planted-on">planting date</label>
                         <input style={{alignSelf: "center", width: "119.5%"}} className="planted-date white" type="date" value={this.state.date} onChange={this.handleOnChangeDate}/>
                         <label style={{alignSelf: "center", width: "120%"}} className="days-to-harvest">expected to harvest</label>

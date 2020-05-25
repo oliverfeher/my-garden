@@ -24,9 +24,8 @@ class Api::SessionsController < ApplicationController
         # binding.pry
         token = JWT.decode(params[:token], "t3sts3cr3t")
         @user = User.find_by(id: token.first["user_id"])
-        render json: {
-            user: @user
-        }
+        render json: @user.to_json(:include => [:plants])
+    
     end
 
 

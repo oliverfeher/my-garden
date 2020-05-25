@@ -404,7 +404,8 @@ nav a:hover {
     border-radius: 15px 15px 0 0;
 }
 
-.plants-name-input {
+#plants-name-input {
+    margin-top: -1%;
     background-color: #959595;
     font-size: 1.4em;
     width: 70%;
