@@ -72,11 +72,11 @@ class Plant extends React.Component
                     <img src={Garden} id="form-garden"></img>
                     <form id="planting-form" onSubmit={this.handleOnSubmit}>
                         <label style={{alignSelf: "center", width: "120%"}}className="plants-name">plant's name</label>
-                        <input style={{alignSelf: "center", width: "119.5%"}} className="plants-name-input" type="text" value={this.state.name} onChange={this.handleOnChangeName}/>
+                        <input style={{alignSelf: "center", width: "119.5%"}} className="plants-name-input white" type="text" value={this.state.name} onChange={this.handleOnChangeName}/>
                         <label style={{alignSelf: "center", width: "120%"}} className="planted-on">planting date</label>
-                        <input style={{alignSelf: "center", width: "119.5%"}} className="planted-date" type="date" value={this.state.date} onChange={this.handleOnChangeDate}/>
+                        <input style={{alignSelf: "center", width: "119.5%"}} className="planted-date white" type="date" value={this.state.date} onChange={this.handleOnChangeDate}/>
                         <label style={{alignSelf: "center", width: "120%"}} className="days-to-harvest">expected to harvest</label>
-                        <input style={{alignSelf: "center", width: "119.5%"}} className="days-to"type="number" value={this.state.days} onChange={this.handleOnChangeDays}/>
+                        <input style={{alignSelf: "center", width: "119.5%"}} className="days-to white"type="number" value={this.state.days} onChange={this.handleOnChangeDays}/>
                         <input className="harvest-button" type="submit" value="Plant!" id="plant-button"/>  
                     </form>
                 </div>
