@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 import GrowingPlant from "./GrowingPlant";
+import { Link } from "react-router-dom";
 
 class Current extends React.Component
 {
@@ -34,14 +35,27 @@ class Current extends React.Component
     {
         if(localStorage.token)
         {
-            return (
-                <>
-                    <NavBar/>
-                    <div id="plants-container">
-                        {this.state.plants ? this.renderPlants(this.state) : <h1>Loading..</h1>}
-                    </div>
-                </>
-            )
+            if(this.state.plants.length === 0)
+            {
+                return (
+                    <>
+                        <NavBar/>
+                        <h1 id="no-plants-yet">You don't have any plants yet!</h1>
+                        <h3>Let's go <Link id="plant-some" to={"/plant"}>plant</Link> some!</h3>
+                    </>
+                )
+            }
+            else
+            {
+                return (
+                    <>
+                        <NavBar/>
+                        <div id="plants-container">
+                            {this.state.plants ? this.renderPlants(this.state) : <h1>Loading..</h1>}
+                        </div>
+                    </>
+                )
+            }
         }
         else
         {

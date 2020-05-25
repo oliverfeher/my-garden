@@ -134,6 +134,19 @@ a {
     height: 10%;
 }
 
+#no-plants-yet {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#plant-some {
+    color: #83BC66;
+}
+#plant-some:hover {
+    color: #E2AD59;
+}
+
 #log-in-form label:first-child {
     margin-top: 7%;
 }
