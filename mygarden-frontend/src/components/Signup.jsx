@@ -1,6 +1,6 @@
 import React from "react";
 import gardenLogo from "../images/garden.png"
-import { Link } from 'react-router-dom';
+import axios from "axios";
 
 class Signup extends React.Component {
     constructor()
@@ -30,27 +30,34 @@ class Signup extends React.Component {
         })
     }
 
+    handleOnSubmit = event =>
+    {
+        event.preventDefault();
+        axios.post("http://localhost:3001/api/users", {
+            user: this.state
+        })
+        .then(response =>
+            {
+                localStorage.setItem("token", response.data.token);
+                this.props.history.push("/Dashboard")
+            })
+    }
+
     render()
     {
         return (
             <div id="main">
                 <img src={gardenLogo} id="garden-logo" alt=""/>
                 <h2 className="white text-big">myGarden</h2>
-                    <form onSubmit={this.handleOnSubmit} id="log-in-form">
-                        <label className="text-medium">First name:</label>
-                        <br />
-                        <input type="text" value={this.state.password} onChange={this.handleOnChangeName}/>
-                        <br />
-                        <label className="text-medium">Email:</label>
-                        <br/>
-                        <input type="e-mail" value={this.state.email} onChange={this.handleOnChangeEmail}/>
-                        <br/>
-                        <label className="text-medium">Password:</label>
-                        <br/>
-                        <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
-                        <br />
-                        <input type="submit" id="sign-up" className="text-medium" value="Sign up"/>
-                    </form>
+                <form onSubmit={this.handleOnSubmit} id="sign-up-form">
+                    <label className="text-medium label-margin">First name:</label>
+                    <input type="text" value={this.state.first_name} onChange={this.handleOnChangeName}/>
+                    <label className="text-medium label-margin">Email:</label>
+                    <input type="email" value={this.state.email} onChange={this.handleOnChangeEmail}/>
+                    <label className="text-medium">Password:</label>
+                    <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
+                    <input type="submit" id="sign-up" className="text-medium sign-up" value="Sign up"/>
+                </form>
                 <div id="footer">
                     <p className="text-medium">© 2020 - myGarden - All Rights Reserved</p>
                 </div>

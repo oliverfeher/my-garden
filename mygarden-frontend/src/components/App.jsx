@@ -23,7 +23,7 @@ const Main = () =>
   <Switch>
     <Route exact path="/" component={Welcome} />
     <Route exact path="/dashboard" component={Dashboard} />
-    <Route exact path="/signup" component={Signup, Dashboard} />
+    <Route exact path="/signup" component={Signup} />
     <Route exact path="/plant" component={Plant} />
     <Route exact path="/current" component={Current} />
   </Switch>

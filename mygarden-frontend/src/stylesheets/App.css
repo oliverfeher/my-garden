@@ -58,6 +58,18 @@ a {
     margin: 2% 0 0 0;
 }
 
+#sign-up-form {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    height: 300px;
+    margin: 2% 0 0 0;
+}
+
 #form-buttons {
     display: flex;
     flex-direction: row;
@@ -89,7 +101,7 @@ a {
     height: 60%;
 }
 
-#sign-up {
+.sign-up {
     margin-top: 5%;
     border-radius: 25px;
     width: 30%;
@@ -98,7 +110,8 @@ a {
     background-color: #E2AD59;
     border: black solid 1px;
 }
-#log-in-form input[type=email], input[type=password] {
+
+#log-in-form input[type=email], input[type=password], input[type=text], input[type=password] {
     height: 10%;
     width: 70%;
     border-radius: 25px;
@@ -106,6 +119,19 @@ a {
     margin: 2% 0 0 0;
     font-size: 1.2em;
     text-align: center;
+}
+
+#sign-up-form input[type=email], input[type=password], input[type=text], input[type=password] {
+    height: 10%;
+    width: 70%;
+    border-radius: 25px;
+    border: black solid 1px;
+    margin: 2% 0 0 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+#sign-up {
+    height: 10%;
 }
 
 #log-in-form label:first-child {

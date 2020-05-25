@@ -71,7 +71,7 @@ class Welcome extends React.Component
                         <input type="password" value={this.state.password} onChange={this.handleOnChangePassword}/>
                         <div id="form-buttons">
                             <input type="submit" id="log-in" className="text-medium" value="Login"/>
-                            <Link to={"/signup"} id="sign-up" className="text-medium">Sign up</Link>
+                            <Link to={"/signup"} className="text-medium sign-up">Sign up</Link>
                         </div>
                     </form>
                 <div id="footer">
