@@ -3,7 +3,7 @@ import axios from "axios";
 import Weather from "./Weather";
 import NavBar from "./NavBar";
 import Greeting from './Greeting';
-import jwt from "jsonwebtoken";
+import CurrentlyGrowing from "./CurrentlyGrowing";
 
 
 class Dashboard extends React.Component
@@ -60,11 +60,7 @@ class Dashboard extends React.Component
           <div id="dashboard-main">
             <Greeting userName={this.state.user.first_name} />
             <div id="dashboard-divs">
-              <div id="currently-growing">
-                <h3>myGarden</h3>
-                <div></div>
-                <p>You currently have {this.state.user.plants.length > 0 ? this.state.user.plants.length : 0 } plants growing.</p>
-              </div>
+              <CurrentlyGrowing plants={this.state.user.plants} />
               <div id="plants-ready">
               </div>
               <Weather location={this.state.coords}/>
