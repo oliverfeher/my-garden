@@ -240,12 +240,7 @@ nav a:hover {
     align-items: center;
 }
 
-#currently-growing {
-    border-radius: 25px;
-    background-color: white;
-    width: 50%;
-    margin-right: 5%;
-}
+
 
 #forecast {
     color: white;
@@ -418,3 +413,24 @@ nav a:hover {
     font-size: 1.4em;
     font-family: 'Berkshire Swash', cursive;
 }
+
+#currently-growing {
+    border-radius: 25px;
+    margin-right: 5%;
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#currently-growing-title {
+    margin-top: 2%;
+    font-size: 2em;
+}
+
+#currently-growing p {
+    margin-top: 2%;
+    font-size: 1.2em;
+}
+
+

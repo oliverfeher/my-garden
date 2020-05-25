@@ -7,9 +7,9 @@ const CurrentlyGrowing = (props) =>
     {
         return (
             <div id="currently-growing">
-                    <h3>myGarden</h3>
-                    <div></div>
-                    <p>You currently have <span style={{color: "red"}}>{props.plants.length}</span> plants growing.</p>
+                    <h3 id="currently-growing-title">myGarden</h3>
+                    <div id="border-mygarden"></div>
+                    <p>You currently have <span style={{color: "red", fontSize: "1.4em"}}>{props.plants.length}</span> plants growing.</p>
             </div>
         )
     }
@@ -18,7 +18,6 @@ const CurrentlyGrowing = (props) =>
         return (
             <div id="currently-growing">
                     <h3>myGarden</h3>
-                    <div></div>
                     <p>You don't have any plants growing.</p>
             </div>
         )
