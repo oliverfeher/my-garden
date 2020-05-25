@@ -9,6 +9,27 @@ class Signup extends React.Component {
         this.state = {};
     }
 
+    handleOnChangeName = event =>
+    {
+        this.setState({
+            first_name: event.target.value
+        })
+    }
+
+    handleOnChangeEmail = event =>
+    {
+        this.setState({
+            email: event.target.value
+        })
+    }
+
+    handleOnChangePassword = event =>
+    {
+        this.setState({
+            password: event.target.value
+        })
+    }
+
     render()
     {
         return (

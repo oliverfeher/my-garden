@@ -6,7 +6,7 @@ const GrowingPlant = (props) =>
 {
     return (
         <div className="plant-container">
-            <img src={Veggies} className="veggie-logo"/>
+            <img src={Veggies} className="veggie-logo" alt="veggie-logo"/>
             <h3>{props.plant.name}</h3>
             <p className="planted-on">planted on</p>
             <p className="planted-date white">{props.plant.plant_date}</p>
@@ -26,7 +26,7 @@ const getRemainingDays = (date, days) =>
     let firstDate = Moment(date)
     let secondDate = firstDate.add(days, "days")
     let diffDays = secondDate.diff(Moment(), "days", true);
-    return Math.floor(diffDays);
+    return Math.ceil(diffDays);
 }
 
 export default GrowingPlant;
