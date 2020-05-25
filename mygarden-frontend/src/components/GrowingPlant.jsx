@@ -23,7 +23,6 @@ const GrowingPlant = (props) =>
 // COUNT REMAINING DAYS BASED ON USER INPUT PLUS TODAYS DATE
 const getRemainingDays = (date, days) =>
 {
-    const oneDay = 24 * 60 * 60 * 1000;
     let firstDate = Moment(date)
     let secondDate = firstDate.add(days, "days")
     let diffDays = secondDate.diff(Moment(), "days", true);
