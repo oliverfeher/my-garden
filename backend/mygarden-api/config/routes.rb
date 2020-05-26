@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # /api/ for routing the api path
   namespace :api do 
     resources :users do
+      delete "/plants/:plant_id", to: "plants#destroy"
       post "/plant", to: "plants#create"
     end
     post "/login", to: "sessions#authenticate"
