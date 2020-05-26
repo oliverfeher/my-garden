@@ -14,6 +14,12 @@ class Current extends React.Component
             plants: []
         };
     }
+    
+    handleOnCancelClick = event =>
+    {
+        axios.delete(`http://localhost:3001/users/${jwt.decode(localStorage.token).user_id}/plants/${event.target.getAttribute('data-set')}`)
+        .then(response => console.log(response));
+    }
 
     componentDidMount = () =>
     {
@@ -28,7 +34,7 @@ class Current extends React.Component
     // RENDER EXISTING PLANTS THAT ARE CURRENTLY GROWING
     renderPlants = (obj) =>
     {
-        return obj.plants.map(plant => <GrowingPlant plant={plant} key={plant.id}/> )
+        return obj.plants.map(plant => <GrowingPlant plant={plant} key={plant.id} plantId={plant.id} handleOnCancelClick={this.handleOnCancelClick}/> )
     }
 
     render()
