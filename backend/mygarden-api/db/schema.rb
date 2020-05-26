@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_141634) do
+ActiveRecord::Schema.define(version: 2020_05_26_214222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_141634) do
     t.date "plant_date"
     t.integer "days_to_harvest"
     t.integer "user_id"
+    t.string "status", default: "planted"
   end
 
   create_table "users", force: :cascade do |t|
