@@ -4,6 +4,7 @@ import Weather from "./Weather";
 import NavBar from "./NavBar";
 import Greeting from './Greeting';
 import CurrentlyGrowing from "./CurrentlyGrowing";
+import PlantsReady from "./PlantsReady";
 
 
 class Dashboard extends React.Component
@@ -60,10 +61,11 @@ class Dashboard extends React.Component
           <div id="dashboard-main">
             <Greeting userName={this.state.user.first_name} />
             <div id="dashboard-divs">
-              <CurrentlyGrowing plants={this.state.user.plants} />
-              <div id="plants-ready">
+              <div id="dashboard-info">
+                <CurrentlyGrowing plants={this.state.user.plants} />
+                <PlantsReady plants={this.state.user.plants} />
               </div>
-              <Weather location={this.state.coords}/>
+              <Weather location={this.state.coords} />
             </div>
           </div>
         </div>

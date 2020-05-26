@@ -213,11 +213,13 @@ nav a:hover {
 }
 
 #welcome-user {
+    width: 100%;
     margin-right: auto;
     margin-left: 1%;
 }
 #date {
     margin-right: 1%;
+    width: 20%;
 }
 
 #dashboard-divs {
@@ -415,10 +417,7 @@ nav a:hover {
 }
 
 #currently-growing {
-    border-radius: 25px;
-    margin-right: 5%;
-    background-color: white;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -433,4 +432,31 @@ nav a:hover {
     font-size: 1.2em;
 }
 
+#dashboard-info {
+    border-radius: 25px;
+    margin-right: 5%;
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#plants-ready {
+    margin-top: 5%;
+    border-top: 3px black solid;
+}
+#plants-ready h3 {
+    margin-top: 5%;
+    font-size: 1.2em;
+}
+
+#listed-plants {
+    font-size: 1.1em;
+    margin-top: 5%;
+    text-align: center;
+}
+
+#listed-plants p {
+    margin-bottom: 2%;
+}
