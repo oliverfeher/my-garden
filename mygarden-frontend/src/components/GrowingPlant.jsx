@@ -14,7 +14,7 @@ const GrowingPlant = (props) =>
             <p className="days-to-harvest">days to harvest</p>
             <p className="days-to white">{getRemainingDays(props.plant.plant_date, props.plant.days_to_harvest)} days</p>
             <div className="harvest-buttons">
-                <button className="harvest-button">harvest</button>
+                <button className="harvest-button" onClick={this.props.handleHarvestClick}>harvest</button>
                 <button className="cancel-button" data-set={props.plantId} onClick={props.handleOnCancelClick}>cancel</button>
             </div>
         </div>

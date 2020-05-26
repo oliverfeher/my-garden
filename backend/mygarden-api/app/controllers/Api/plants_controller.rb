@@ -12,4 +12,8 @@ class Api::PlantsController < ApplicationController
         plant.destroy
         render json: @user.to_json(:include => [:plants])
     end
+
+    def update
+        binding.pry
+    end
 end
