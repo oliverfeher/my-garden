@@ -18,7 +18,9 @@ class Current extends React.Component
     handleOnCancelClick = event =>
     {
         axios.delete(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}/plants/${event.target.getAttribute('data-set')}`)
-        .then(response => console.log(response));
+        .then(response => this.setState({
+            plants: response.data.plants
+        }));
     }
 
     componentDidMount = () =>
