@@ -12,8 +12,11 @@ class Api::PlantsController < ApplicationController
         plant.destroy
         render json: @user.to_json(:include => [:plants])
     end
-
+    
     def update
-        binding.pry
+        @user = User.find_by(id: params[:user_id])
+        plant = Plant.find_by(id: params[:plant_id])
+        plant.update(status: "harvested")
+        render json: @user.to_json(:include => [:plants])
     end
 end

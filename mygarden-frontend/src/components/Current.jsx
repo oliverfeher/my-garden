@@ -19,7 +19,15 @@ class Current extends React.Component
     {
         axios.delete(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}/plants/${event.target.getAttribute('data-set')}`)
         .then(response => this.setState({
-            plants: response.data.plants
+            plants: response.data.plants.filter(plant=> plant.status === "planted")
+        }));
+    }
+
+    handleHarvestClick = event =>
+    {
+        axios.patch(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}/plants/${event.target.getAttribute('data-set')}`)
+        .then(response => this.setState({
+            plants: response.data.plants.filter(plant=> plant.status === "planted")
         }));
     }
 
@@ -36,7 +44,7 @@ class Current extends React.Component
     // RENDER EXISTING PLANTS THAT ARE CURRENTLY GROWING
     renderPlants = (obj) =>
     {
-        return obj.plants.map(plant => <GrowingPlant plant={plant} key={plant.id} plantId={plant.id} handleOnCancelClick={this.handleOnCancelClick}/> )
+        return obj.plants.map(plant => <GrowingPlant plant={plant} key={plant.id} plantId={plant.id} handleOnCancelClick={this.handleOnCancelClick} handleHarvestClick={this.handleHarvestClick}/> )
     }
 
     render()

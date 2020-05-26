@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users do
       delete "/plants/:plant_id", to: "plants#destroy"
       post "/plant", to: "plants#create"
-      post "/plants/:plant_id", to: "plants#update"
+      patch "/plants/:plant_id", to: "plants#update"
     end
     post "/login", to: "sessions#authenticate"
     post "/authorize", to: "sessions#authorize"
