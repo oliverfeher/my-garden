@@ -28,7 +28,7 @@ class Current extends React.Component
         axios.get(`http://localhost:3001/api/users/${jwt.decode(localStorage.token).user_id}`)
         .then(response =>this.setState(
             {
-                plants: response.data.plants
+                plants: response.data.plants.filter(plant=> plant.status === "planted")
             }
         ))
     }

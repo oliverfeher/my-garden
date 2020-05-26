@@ -13,6 +13,14 @@ const PlantsReady = (props) =>
             </div>
         </div>
     )
+    else
+    {
+        return (
+            <div id="plants-ready">
+                <h3>You have <span style={{color: "red", fontSize: "1.4em"}}>0</span> plants.</h3>
+            </div>
+        )
+    }
 }
 
 const listPlants = (arr) =>
