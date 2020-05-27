@@ -14,7 +14,7 @@ class Weather extends React.Component
 
     getLocation = () =>
     {
-        axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm&q=${this.props.location.lat}%2C${this.props.location.lon}`)
+        axios.get(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${process.env.REACT_APP_GEO_API_KEY}&q=${this.props.location.lat}%2C${this.props.location.lon}`)
         .then(response => { 
           this.setState({
               location: {
@@ -28,7 +28,7 @@ class Weather extends React.Component
 
     getWeather = (response) =>
     {
-        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${response.data["Key"]}?apikey=uGmVxpNe4u0m8ceDOfkXkmnOFeSyD8tm`)
+        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${response.data["Key"]}?apikey=${process.env.REACT_APP_GEO_API_KEY}`)
         .then(response => this.setState({
             weather: {
                 temp: response.data[0]["Temperature"]["Imperial"],

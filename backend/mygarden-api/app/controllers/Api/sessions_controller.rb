@@ -6,8 +6,6 @@ class Api::SessionsController < ApplicationController
         
         
         if @user && @user.authenticate(user_params[:password])
-            # ENCODE JWT TOKEN WITH USER_ID AND SECRET KEY
-            # TODO HIDE SECRET KEY INTO .ENV 
             token = JWT.encode({user_id: @user.id}, "t3sts3cr3t")
             render json: {
                 token: token
