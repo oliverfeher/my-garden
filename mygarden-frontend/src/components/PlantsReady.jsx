@@ -7,9 +7,9 @@ const PlantsReady = (props) =>
     if(props.plants.length > 0)
     return (
         <div id="plants-ready">
-            <h3>You have <span style={{color: "red", fontSize: "1.4em"}}>{countPlants(props.plants).length}</span> plants ready in less than <span style={{color: "green", fontSize: "1.4em"}}>10</span> days.</h3>
+            <h3>You have <span style={{color: "red", fontSize: "1.4em"}}>{countPlants(props.plants.filter(plant=> plant.status === "planted")).length}</span> plants ready in less than <span style={{color: "green", fontSize: "1.4em"}}>10</span> days.</h3>
             <div id="listed-plants">
-                {listPlants(countPlants(props.plants))}
+                {listPlants(countPlants(props.plants.filter(plant=> plant.status === "planted")))}
             </div>
         </div>
     )
