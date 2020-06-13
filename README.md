@@ -29,9 +29,9 @@ This section displays all the previously harvested plants of the user.
 ## Follow along Video
 Click on the PIC to redirect to YouTube for the demo video.
 
-<a href="https://www.youtube.com/watch?v=raOQzqKrqAA" target="_blank">
-    <a href="https://ibb.co/BTfsv7S"><img src="https://i.ibb.co/P1rCJbf/mygarden-landing.png" alt="mygarden-landing" border="0"></a> 
-</a> 
+
+<a href="https://www.youtube.com/watch?v=raOQzqKrqAA" target="_blank"><img src="https://i.ibb.co/P1rCJbf/mygarden-landing.png" alt="mygarden-landing" border="0"/></a> 
+
 
 
 ## License
