@@ -9,7 +9,7 @@ If you dont already have an account sign up and and login to reach the user dash
 Click on the GIF to redirect to YouTube for the demo video.
 
 <a href="https://www.youtube.com/watch?v=raOQzqKrqAA" target="_blank">
-    <a href="https://ibb.co/BTfsv7S"><img src="https://i.ibb.co/P1rCJbf/mygarden-landing.png" alt="mygarden-landing" border="0"></a> width="240" height="180" border="10"/>
+    <a href="https://ibb.co/BTfsv7S"><img src="https://i.ibb.co/P1rCJbf/mygarden-landing.png" alt="mygarden-landing" border="0"></a> 
 </a> 
 
 
